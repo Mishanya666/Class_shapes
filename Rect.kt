@@ -5,10 +5,8 @@ class Rect(
     var height: Int,
 ) : Movable, Figure(0), Transforming {
 
-    // Дополнительный конструктор для создания прямоугольника на основе другого
     constructor(rect: Rect) : this(rect.x, rect.y, rect.width, rect.height)
 
-    // Переопределение метода перемещения
     override fun move(dx: Int, dy: Int) {
         x += dx
         y += dy
@@ -20,7 +18,7 @@ class Rect(
 
     override fun resize(zoom: Int) {
         if (zoom <= 0) {
-            println("Коэффициент масштабирования должен быть больше нуля..")
+            println("Коэффициент масштабирования должен быть больше нуля.")
             return
         }
         width *= zoom
